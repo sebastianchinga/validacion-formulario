@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="/build/css/app.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Contact Us</h1>
+
+    <form action="" class="formulario">
+
+      <div class="campo campo-flex" id="campo">
+        <div class="grupo-nombre">
+          <label for="nombre">First Name *</label>
+          <input type="text" name="nombre" id="nombre" class="formulario__input">
+          <span class="span" id="span-nombre">This field is required</span>
+        </div>
+        <div class="grupo-apellido">
+          <label for="apellido">Last Name</label>
+          <input type="text" name="apellido" id="apellido" class="formulario__input">
+          <span class="span" id="span-apellido">This field is required</span>
+        </div>
+      </div>
+
+      <div class="campo" id="campo">
+        <label for="email">Email Address *</label>
+        <input type="email" name="email" id="email" class="formulario__input">
+        <span class="span" id="span-email">Please enter a valid email address</span>
+      </div>
+
+      <div class="campo" id="campo">
+        <p>Query Type</p>
+        <div class="campo-flex">
+          <div class="formulario__input formulario__input-width" id="tipo">
+            <input type="radio" name="query" id="tipo-general" value="1" class="query">
+            <label for="tipo-general">General Enquiry</label>
+          </div>
+          <div class="formulario__input formulario__input-width" id="tipo">
+            <input type="radio" name="query" id="tipo" value="2" class="query">
+            <label for="tipo">Support Request</label>
+          </div>
+        </div>
+        <span class="span" id="span-query">Please select a query type</span>
+      </div>
+
+      <div class="campo" id="campo">
+        <label for="mensaje">Message *</label>
+        <textarea name="mensaje" id="mensaje" class="formulario__input"></textarea>
+        <span class="span" id="span-mensaje">This field is required</span>
+      </div>
+
+      <div class="campo campo-flex" id="campo">
+        <input type="checkbox" name="checkbox" id="checkbox">
+        <label for="checkbox">I consent to being contacted by the team</label>
+      </div>
+      <!-- <span class="span span-block">To submit this form, please consent to being contacted</span> -->
+
+      <input type="submit" value="Submit" class="boton">
+
+    </form>
+
+  </div>
+
+
+  
+
+  <!-- Message Sent!
+  Thanks for completing the form. We'll be in touch soon! -->
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+
+  <script src="/build/js/app.js"></script>
+</body>
+
+</html>
