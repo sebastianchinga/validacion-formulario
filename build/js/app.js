@@ -19,46 +19,54 @@ function validarFormulario() {
 }
 
 function validarNombre() {
-    const inputNombre = document.querySelector('#nombre').value;
+    const inputNombre = document.querySelector('#nombre');
     const span = document.querySelector('#span-nombre');
-    if (!inputNombre) {
+    if (!inputNombre.value) {
+        inputNombre.classList.add('formulario__input--error')
         span.classList.add('span-block');
     } else {
         span.classList.remove('span-block');
+        inputNombre.classList.remove('formulario__input--error')
+        inputNombre.classList.add('formulario__input--exito')
     }
 }
 
 function validarApellido() {
-    const inputApellido = document.querySelector('#apellido').value;
+    const inputApellido = document.querySelector('#apellido');
     const span = document.querySelector('#span-apellido');
-    if (!inputApellido) {
+    if (!inputApellido.value) {
+        inputApellido.classList.add('formulario__input--error')
         span.classList.add('span-block');
     } else {
         span.classList.remove('span-block');
+        inputApellido.classList.remove('formulario__input--error')
+        inputApellido.classList.add('formulario__input--exito')
     }
 }
 
 function validarEmail() {
-    const inputEmail = document.querySelector('#email').value;
+    const inputEmail = document.querySelector('#email');
     const span = document.querySelector('#span-email');
-    if (!inputEmail) {
+    if (!inputEmail.value) {
+        inputEmail.classList.add('formulario__input--error')
         span.classList.add('span-block');
     } else {
         span.classList.remove('span-block');
+        inputEmail.classList.remove('formulario__input--error')
+        inputEmail.classList.add('formulario__input--exito')
     }
 }
 
 function validarQuery() {
     const span = document.querySelector('#span-query');
-    let s = "no"
+    let s = false
     for (let index = 0; index<document.formp.query.length; index++) {
         if (document.formp.query[index].checked) {
-            // console.log("Marcó "+document.formp.query[index].value);
-            s = "si";
+            s = true;
         }
         
     }
-    if (s == "no") {
+    if (!s) {
         span.classList.add('span-block');
     } else {
         span.classList.remove('span-block');
@@ -66,11 +74,14 @@ function validarQuery() {
 }
 
 function validarMensaje() {
-    const inputMensaje = document.querySelector('#mensaje').value;
+    const inputMensaje = document.querySelector('#mensaje');
     const span = document.querySelector('#span-mensaje');
-    if (!inputMensaje) {
-        span.classList.add('span-block');
+    if (!inputMensaje.value) {
+        inputMensaje.classList.add('formulario__input--error')
+        span.classList.add('span-block')
     } else {
         span.classList.remove('span-block');
+        inputMensaje.classList.remove('formulario__input--error')
+        inputMensaje.classList.add('formulario__input--exito')
     }
 }
