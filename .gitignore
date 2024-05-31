@@ -2,3 +2,4 @@ node_modules/
 src/
 *.json
 gulpfile.js
+design/
