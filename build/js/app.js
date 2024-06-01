@@ -114,7 +114,7 @@ function mostrarNotificacion() {
     notificacion.classList.remove('notificacion--ocultar');
     setTimeout(() => {
         resetearCampos();
-        notificacion.remove();
+        notificacion.classList.add('notificacion--ocultar');
     }, 3000);
 }
 
@@ -136,4 +136,14 @@ function resetearCampos() {
 
     const mensaje = document.querySelector('#mensaje');
     mensaje.value = '';
+
+    resetearObjetoContacto();
+}
+
+function resetearObjetoContacto() {
+    contacto.nombre = '',
+    contacto.apellido = '',
+    contacto.email = '',
+    contacto.type = '',
+    contacto.mensaje = ''
 }
