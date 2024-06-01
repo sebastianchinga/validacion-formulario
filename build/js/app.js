@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     inicarApp();
 })
 
+const contacto = {
+    nombre: '',
+    apellido: '',
+    email: '',
+    type: '',
+    mensaje: ''
+}
+
 function inicarApp() {
     validarFormulario();
 }
@@ -15,6 +23,7 @@ function validarFormulario() {
         validarEmail();
         validarQuery();
         validarMensaje();
+        validarObjeto();
     })
 }
 
@@ -26,8 +35,9 @@ function validarNombre() {
         span.classList.add('span-block');
     } else {
         span.classList.remove('span-block');
-        inputNombre.classList.remove('formulario__input--error')
-        inputNombre.classList.add('formulario__input--exito')
+        inputNombre.classList.remove('formulario__input--error');
+        inputNombre.classList.add('formulario__input--exito');
+        contacto.nombre = inputNombre.value;
     }
 }
 
@@ -40,7 +50,8 @@ function validarApellido() {
     } else {
         span.classList.remove('span-block');
         inputApellido.classList.remove('formulario__input--error')
-        inputApellido.classList.add('formulario__input--exito')
+        inputApellido.classList.add('formulario__input--exito');
+        contacto.apellido = inputApellido.value;
     }
 }
 
@@ -53,7 +64,8 @@ function validarEmail() {
     } else {
         span.classList.remove('span-block');
         inputEmail.classList.remove('formulario__input--error')
-        inputEmail.classList.add('formulario__input--exito')
+        inputEmail.classList.add('formulario__input--exito');
+        contacto.email = inputEmail.value;
     }
 }
 
@@ -63,6 +75,7 @@ function validarQuery() {
     for (let index = 0; index<document.formp.query.length; index++) {
         if (document.formp.query[index].checked) {
             s = true;
+            contacto.type = document.formp.query[index].value;
         }
         
     }
@@ -70,6 +83,7 @@ function validarQuery() {
         span.classList.add('span-block');
     } else {
         span.classList.remove('span-block');
+        
     }
 }
 
@@ -82,6 +96,44 @@ function validarMensaje() {
     } else {
         span.classList.remove('span-block');
         inputMensaje.classList.remove('formulario__input--error')
-        inputMensaje.classList.add('formulario__input--exito')
+        inputMensaje.classList.add('formulario__input--exito');
+        contacto.mensaje = inputMensaje.value
     }
+}
+
+function validarObjeto() {
+    if (!contacto.nombre || !contacto.apellido || !contacto.email || !contacto.type || !contacto.mensaje) {
+        // console.log('Campos no llenados');
+    } else {
+        mostrarNotificacion();
+    }
+}
+
+function mostrarNotificacion() {
+    const notificacion = document.querySelector('#notificacion');
+    notificacion.classList.remove('notificacion--ocultar');
+    setTimeout(() => {
+        resetearCampos();
+        notificacion.remove();
+    }, 3000);
+}
+
+function resetearCampos() {
+    const nombre = document.querySelector('#nombre');
+    nombre.value = '';
+
+    const apellido = document.querySelector('#apellido');
+    apellido.value = '';
+
+    const email = document.querySelector('#email');
+    email.value = '';
+
+    const radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => {
+        radio.checked = false;
+    });
+
+
+    const mensaje = document.querySelector('#mensaje');
+    mensaje.value = '';
 }

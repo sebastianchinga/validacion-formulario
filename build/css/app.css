@@ -443,3 +443,22 @@ h1, h2, h3, p, a {
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.notificacion {
+  background-color: hsl(187, 24%, 22%);
+  padding: 1.5rem;
+  border-radius: 0.6rem;
+}
+.notificacion__titulo {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+.notificacion__mensaje {
+  color: hsl(148, 38%, 91%);
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.notificacion--ocultar {
+  display: none;
+}
