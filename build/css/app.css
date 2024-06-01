@@ -400,6 +400,13 @@ h1, h2, h3, p, a {
   background-color: hsl(0, 0%, 100%);
   padding: 2rem;
   border-radius: 1rem;
+  width: 50rem;
+  margin: 2rem 0;
+}
+@media (max-width: 570px) {
+  .card {
+    width: 40rem;
+  }
 }
 
 .formulario {
@@ -432,9 +439,16 @@ h1, h2, h3, p, a {
 
 .campo-flex {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   gap: 2rem;
+  margin-bottom: 1.4rem;
+}
+@media (min-width: 768px) {
+  .campo-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .grupo-nombre,
@@ -444,10 +458,15 @@ h1, h2, h3, p, a {
   gap: 0.5rem;
 }
 
+.campo-confirmacion {
+  margin: 1rem 0;
+}
+
 .notificacion {
   background-color: hsl(187, 24%, 22%);
   padding: 1.5rem;
   border-radius: 0.6rem;
+  margin: 1rem 0;
 }
 .notificacion__titulo {
   color: hsl(0, 0%, 100%);
