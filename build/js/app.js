@@ -106,6 +106,8 @@ function validarObjeto() {
         // console.log('Campos no llenados');
     } else {
         mostrarNotificacion();
+        resetearCampos();
+        resetearEstilosCampos();
     }
 }
 
@@ -113,7 +115,6 @@ function mostrarNotificacion() {
     const notificacion = document.querySelector('#notificacion');
     notificacion.classList.remove('notificacion--ocultar');
     setTimeout(() => {
-        resetearCampos();
         notificacion.classList.add('notificacion--ocultar');
     }, 3000);
 }
@@ -146,4 +147,13 @@ function resetearObjetoContacto() {
     contacto.email = '',
     contacto.type = '',
     contacto.mensaje = ''
+}
+
+function resetearEstilosCampos() {
+    const inputs = document.querySelectorAll('.formulario__input--exito');
+    inputs.forEach(i => {
+        if (i) {
+            i.classList.remove('formulario__input--exito')
+        }
+    });
 }
